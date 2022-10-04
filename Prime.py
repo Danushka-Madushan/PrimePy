@@ -21,5 +21,24 @@ primes = [x+1 for x in set([nums.index(nums[i]) if len(nums[i][i+1]) == 1 else 0
 primes.sort()
 
 print(primes)
-
 # output = [1, 2, 3, 5, 7]
+
+# if you are looking for quicker method here it is
+def is_prime(x):
+	t = []
+	for e in range(1, x):
+		if x%e == 0:
+			t.append(e)
+	return True if len(t) == 1 else False
+
+a = []
+# change the second value in range(, x) for ex, you want to find prime number between 1 and 100. just put 100 in x
+for x in range(1, 10000):
+	if is_prime(x):
+		a.append(x)
+		
+print(a)
+
+# Note
+# The first function is for advance use which means the first function is for finding prime numbers and non-prime numbers with divisible numbers.
+# If you want quick answers use second function, If you're looking for more detailed answer use first function
